@@ -24,7 +24,7 @@ https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css
                         $dataList = explode(" ", $_GET['data']);
                         foreach ($dataList as $key) {
                             $fpSave = fopen('list_in', 'a+');
-                            fwrite($fpSave, trim($key)."\n");
+                            fwrite($fpSave, strtoupper(trim($key))."\n");
                             fclose($fpSave);
                         }
                         shell_exec('bash poc.sh');
